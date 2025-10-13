@@ -72,3 +72,6 @@ if os.environ.get('AI_AUTO_START','false').lower() in ('1','true','yes'):
 
 if __name__ == '__main__':
     app.run(port=int(os.environ.get('PORT',5000)), debug=True)
+@app.route("/health")
+def health():
+    return jsonify({"status": "ok"})
