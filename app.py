@@ -3,6 +3,7 @@ from flask_cors import CORS
 import os, time, json, jwt
 from trader import trader as trader_blueprint
 from ai_scheduler import start_scheduler, stop_scheduler
+from backend.trader import trader as trader_blueprint
 
 SECRET_KEY = os.environ.get('JWT_SECRET', 'change_this_secret_in_prod')
 TOKEN_EXP_SECONDS = 3600
