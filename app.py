@@ -72,7 +72,7 @@ if os.environ.get('AI_AUTO_START','false').lower() in ('1','true','yes'):
         print('Failed to auto-start AI scheduler:', e)
 
 if __name__ == '__main__':
-    app.run(port=int(os.environ.get('PORT',5000)), debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 10000)))
 @app.route("/health")
 def health():
     return jsonify({"status": "ok"})
