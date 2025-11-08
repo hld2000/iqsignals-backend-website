@@ -8,7 +8,8 @@ from ai_scheduler import start_scheduler, stop_scheduler
 SECRET_KEY = os.environ.get('JWT_SECRET', 'change_this_secret_in_prod')
 TOKEN_EXP_SECONDS = 3600
 app = Flask(__name__)
-CORS(app)
+from flask_cors import CORS
+CORS(app, resources={r"/*": {"origins": "*"}})
 USERS_FILE = 'users.json'
 
 
